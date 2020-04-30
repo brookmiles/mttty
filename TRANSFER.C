@@ -683,7 +683,7 @@ DWORD WINAPI TransferThreadProc(LPVOID lpV)
     DWORD  dwStartTime;
     HWND   hWndProgress;
     HANDLE hFileHandle;
-    HANDLE hDataHeap;
+    HANDLE hDataHeap = NULL; // brookmiles: initialize to NULL - "C4703 potentially uninitialized local pointer variable 'hDataHeap' used"
     BOOL fStarted = TRUE;
     BOOL fAborting = FALSE;
 

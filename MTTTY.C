@@ -108,12 +108,14 @@ HISTORY:   Date:      Author:     Comment:
 -----------------------------------------------------------------------------*/
 BOOL VersionCheck()
 {
-    gOSV.dwOSVersionInfoSize = sizeof(gOSV);
-    if (!GetVersionEx(&gOSV))
-        return FALSE;
+    // brookmiles: GetVersionEx is obsolete, see https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa
 
-    if (gOSV.dwPlatformId == VER_PLATFORM_WIN32s)
-        return FALSE;
+    //gOSV.dwOSVersionInfoSize = sizeof(gOSV);
+    //if (!GetVersionEx(&gOSV))
+    //    return FALSE;
+
+    //if (gOSV.dwPlatformId == VER_PLATFORM_WIN32s)
+    //    return FALSE;
 
     return TRUE ;
 }
